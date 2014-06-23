@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,UISearchBarDelegate>
 
+-(void) getRestaurantResult:(NSString *) queryString;
 @end

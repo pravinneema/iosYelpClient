@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="filterButton" destination="V4b-R6-SEq" id="CWb-TA-mKK"/>
+                <outlet property="reviewTableView" destination="mo2-Rc-3Bg" id="0wl-ZG-dY2"/>
+                <outlet property="searchBar" destination="eUJ-BJ-hC7" id="f81-by-4zU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +16,52 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mo2-Rc-3Bg">
+                    <rect key="frame" x="0.0" y="71" width="320" height="507"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QF-RO-pBP">
+                    <rect key="frame" x="0.0" y="26" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eUJ-BJ-hC7">
+                            <rect key="frame" x="88" y="0.0" width="232" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="0.01085100634" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="barTintColor" red="1" green="0.01085100634" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4b-R6-SEq">
+                            <rect key="frame" x="7" y="9" width="60" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="0.010851006337158076" blue="0.0" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                            <gestureRecognizers/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <state key="normal" title="Filter">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="filterPressed:" destination="-1" eventType="touchDown" id="nIu-0u-K5B"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.010851006337158076" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="V4b-R6-SEq" firstAttribute="leading" secondItem="4QF-RO-pBP" secondAttribute="leading" constant="7" id="Kzq-lB-pA8"/>
+                        <constraint firstItem="eUJ-BJ-hC7" firstAttribute="leading" secondItem="V4b-R6-SEq" secondAttribute="trailing" constant="21" id="Zho-2v-ZaW"/>
+                        <constraint firstAttribute="trailing" secondItem="eUJ-BJ-hC7" secondAttribute="trailing" id="xrj-ne-fJq"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4QF-RO-pBP" secondAttribute="trailing" id="AQi-nB-20H"/>
+                <constraint firstItem="4QF-RO-pBP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Eu7-cn-9KO"/>
+                <constraint firstAttribute="trailing" secondItem="mo2-Rc-3Bg" secondAttribute="trailing" id="Ifh-ol-2go"/>
+                <constraint firstItem="mo2-Rc-3Bg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZeL-sn-RNT"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

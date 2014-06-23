@@ -10,4 +10,8 @@
 
 @interface YelpCell : UITableViewCell
 
+@property (nonatomic, strong) NSDictionary *singleReview;
+@property (strong, nonatomic) NSMutableDictionary *staticImageDictionary;
+
+-(void) setReview:(NSDictionary *) review;
 @end
